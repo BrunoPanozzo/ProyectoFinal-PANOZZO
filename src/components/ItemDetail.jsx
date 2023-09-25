@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import '../styles/itemDetail.css'
-import { useState } from 'react'
+import { useState, useContext} from 'react'
+import { CartContext } from "../context/CartContext";
 
 function ItemDetail({ producto }) {
+
+    const contextoCarrito = useContext(CartContext)
 
     const [stockDisponible, setStockDisponible] = useState(producto.stock);
     const [contador, setContador] = useState(0);
 
-    function onAdd(cantidadElegida) {
-        setContador(cantidadElegida)
-        setStockDisponible(stockDisponible - cantidadElegida)
+    function onAdd(quantity) {
+        setContador(quantity)
+        setStockDisponible(stockDisponible - quantity)
+
+        //actualizo mi carrito
+        contextoCarrito.addItem(producto, quantity)
     }
 
     return (
