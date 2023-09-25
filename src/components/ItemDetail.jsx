@@ -18,7 +18,7 @@ function ItemDetail({ producto }) {
         //actualizo mi carrito
         contextoCarrito.addItem(producto, quantity)
     }
-
+ 
     return (
         <div>
             <h1 className="titulo-importante">Producto Seleccionado</h1>
