@@ -1,0 +1,15 @@
+.snipper {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textoSpinner {
+    text-align: left;
+    font-size: 35px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #3075d0;
+    padding-top: 40px;
+}

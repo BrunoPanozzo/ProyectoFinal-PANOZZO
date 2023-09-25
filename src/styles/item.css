@@ -1,0 +1,18 @@
+.item {
+    padding: 5px;
+}
+
+.item-precio {
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.item:hover {
+    border: 1px solid #a79393;
+    border-radius: 10px;
+}
+
+.btn-ver-detalle:hover {
+    background-color: rgb(53, 53, 218);
+}
