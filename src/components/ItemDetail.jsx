@@ -6,7 +6,7 @@ import { CartContext } from "../context/CartContext";
 
 function ItemDetail({ producto }) {
 
-    const contextoCarrito = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
 
     const [stockDisponible, setStockDisponible] = useState(producto.stock);
     const [contador, setContador] = useState(0);
@@ -16,7 +16,7 @@ function ItemDetail({ producto }) {
         setStockDisponible(stockDisponible - quantity)
 
         //actualizo mi carrito
-        contextoCarrito.addItem(producto, quantity)
+        addItem(producto, quantity)
     }
  
     return (
@@ -30,7 +30,7 @@ function ItemDetail({ producto }) {
                         <p className="item-detail-precio">${producto.precio}</p>
                         <p className="item-detail-stock">Stock Disponible: {stockDisponible}</p>
                         {contador > 0 ? <p className="item-detail-resumen-compra">Ud. ha comprado {contador} artículo/s.</p> : <p></p>}
-                        {contador > 0 ? <Link to="/cart" className="item-detail-finalizar-compra">Finalizar Compra</Link> : <ItemCount className="item-detail-count" stock={producto.stock} cantidadInicial={contador} onAdd={onAdd} />}
+                        {contador > 0 ? <Link to="/cart" className="btn btn-secondary text-decoration text-center btn-ver-detalle">Finalizar Compra</Link> : <ItemCount className="item-detail-count" stock={producto.stock} cantidadInicial={contador} onAdd={onAdd} />}
                     </div>
                 </div>
                 <div>

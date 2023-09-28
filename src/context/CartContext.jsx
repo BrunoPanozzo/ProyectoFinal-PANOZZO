@@ -1,30 +1,31 @@
-import { createContext, useState } from 'preact';
+import { createContext, useState } from 'react';
 
 export const CartContext = createContext([])
 
 export function CartProvider({ children }) {
 
     //defino mi carrito
-    const[cart, setCart] = useState([])
+    const [cart, setCart] = useState([])
 
     //defino la funcion agregar una cierta "cantidad" de un "item" al carrito
     const addItem = (item, quantity) => {
-        if (existeItem(item))
-        {
+        if (isInCart(item.id)) {
             //debo encontrar la entrada en el carrito y actualizar la cantidad
-            const itemExistente = cart.find((elemento) => elemento.id === item.id)
-            itemExistente.cantidad += quantity
+            const posItemExistente = cart.findIndex((elemento) => elemento.id === item.id)
+            cart[posItemExistente].quantity += quantity
+            setCart(cart)
         }
-        else{
+        else {
             //agrego la entrada al final del carrito
-            setCart(cartActual => [...cartActual, {...item, quantity}])
+            setCart([...cart, {...item, quantity: quantity }])
+            //setCart(cartActual => [...cartActual, {...item, quantity}])
         }
     }
 
     //defino la funcion borrar "item" del carrito
     const removeItem = (itemId) => {
         const cartActualizado = cart.filter(elemento => elemento.id !== itemId)
-        setCart(cartActualizado)
+        setCart(cartActualizado) //setCart([...cartActualizado])
     }
 
     //defino la funcion "vaciar" el carrito
@@ -38,9 +39,19 @@ export function CartProvider({ children }) {
         return itemExistente
     }
 
+    //defino la cantidad total de productos del carrito
+    const totalItems = () => {
+        return cart.reduce((acum, prod) => acum += prod.quantity, 0)
+    }
+
+    //defino el monto total del carrito
+    const totalMonto = () => {
+        return cart.reduce((acum, prod) => acum += prod.quantity * prod.precio, 0)
+    }
+
     return (
-            <CartContext.Provider value={{addItem, removeItem, clearCart, isInCart}} >
-                {children}
-            </CartContext.Provider>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, totalItems, totalMonto }} >
+            {children}
+        </CartContext.Provider>
     );
 }
