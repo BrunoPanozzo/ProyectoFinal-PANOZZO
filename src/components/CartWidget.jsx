@@ -8,8 +8,6 @@ const CartWidget = () => {
 
     const cantidadArticulosComprados = totalItems()
 
-    console.log(cantidadArticulosComprados)
-
     if (cantidadArticulosComprados === 0)
         return (
             <>
