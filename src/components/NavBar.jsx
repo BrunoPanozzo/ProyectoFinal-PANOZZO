@@ -1,13 +1,8 @@
 import '../styles/navBar.css'
-//import Logo from "../img/NavBar/logo-brand.png"
 import CartWidget from "./CartWidget"
 import { Link, NavLink } from "react-router-dom"
-import { useContext } from 'react'
-import { CartContext } from '../context/CartContext'
 
 const NavBar = () => {
-
-    const { totalItems } = useContext(CartContext)
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light nav-encabezado">
@@ -35,7 +30,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div>
-                    {totalItems() > 0 ? <CartWidget /> : <div></div>}
+                    <CartWidget />
                 </div>
             </div>
         </nav>

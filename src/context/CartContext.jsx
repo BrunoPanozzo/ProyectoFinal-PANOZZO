@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
             //debo encontrar la entrada en el carrito y actualizar la cantidad
             const posItemExistente = cart.findIndex((elemento) => elemento.id === item.id)
             cart[posItemExistente].quantity += quantity
-            setCart(cart)
+            setCart([...cart])
         }
         else {
             //agrego la entrada al final del carrito

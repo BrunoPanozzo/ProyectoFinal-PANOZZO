@@ -26,7 +26,7 @@ const Cart = () => {
                     <CartItem key={producto.id} producto={producto} />
                 ))}
             </div>
-            <p className="cart-resumen-compra">Ud. compró un total de {cantidadArticulosComprados} artículos por un monto total de {totalMonto()}</p>
+            <p className="cart-resumen-compra">Ud. compró un total de {cantidadArticulosComprados} artículos por un monto total de $ {totalMonto()}</p>
             <button onClick={() => clearCart()}>Vaciar carrito</button> 
         </div>
     )

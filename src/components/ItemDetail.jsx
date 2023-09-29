@@ -7,18 +7,16 @@ import { CartContext } from "../context/CartContext";
 function ItemDetail({ producto }) {
 
     const {addItem} = useContext(CartContext)
-
-    const [stockDisponible, setStockDisponible] = useState(producto.stock);
-    const [contador, setContador] = useState(0);
+    const [stockDisponible, setStockDisponible] = useState(producto.stock)
+    const [contador, setContador] = useState(0)
 
     function onAdd(quantity) {
         setContador(quantity)
         setStockDisponible(stockDisponible - quantity)
-
         //actualizo mi carrito
         addItem(producto, quantity)
-    }
- 
+    }    
+
     return (
         <div>
             <h1 className="titulo-importante">Producto Seleccionado</h1>

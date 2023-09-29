@@ -6,12 +6,22 @@ const CartWidget = () => {
 
     const { totalItems } = useContext(CartContext)
 
+    const cantidadArticulosComprados = totalItems()
+
+    console.log(cantidadArticulosComprados)
+
+    if (cantidadArticulosComprados === 0)
+        return (
+            <>
+            </>
+        )
+
     return (
         <div>
             {/* <button type="button" className="btn btn-ligth position-relative" width="20" height="20"> */}
                 <Link to={"/cart"}>
                     <img src={"../img/NavBar/carrito.png"} alt="Logo de carrito de compras" width="50" height="50" />
-                    <span id="cantidadProductos" className="position-absolute translate-middle badge rounded-pill bg-danger">{totalItems()}</span>
+                    <span id="cantidadProductos" className="position-absolute translate-middle badge rounded-pill bg-danger">{cantidadArticulosComprados}</span>
                 </Link>
             {/* </button> */}
         </div>
