@@ -6,10 +6,10 @@
 
 .cart-list {
     background-color: #c0bebd;
-    min-height: 70vh;
+    /* min-height: 70vh; */
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content:center;
@@ -20,4 +20,9 @@
     padding-bottom: 5px;
     font-size: 25px;
     font-weight: bold;
+}
+
+.btn-vaciarCarrito {
+    width: 150px;
+    height: 50px;
 }

@@ -1,8 +1,7 @@
-.item {
-    margin: 5px;
+.prod {
+    margin: 20px;
     padding: 5px;
-    max-width: 18rem;
-    min-height: 28rem;
+    width: 100%;
 }
 
 .item-precio {
@@ -11,11 +10,15 @@
     font-weight: bold;
 }
 
-.item:hover {
+.prod:hover {
     border: 1px solid #a79393;
     border-radius: 10px;
+    background-color: rgb(131, 131, 147);
+
 }
 
-.btn-ver-detalle:hover {
-    background-color: rgb(53, 53, 218);
+.btn-eliminarItem {
+    width: 150px;
+    height: 50px;
 }
+
