@@ -30,18 +30,7 @@ const ItemListContainer = () => {
                 setLoading(false)
             });
     }, [nombreCategoria])
-
-    /*
-    *codigo para pasar el JSON a la BD Firestore
-    useEffect(() => {
-        const db = getFirestore();
-        const itemsCollection = collection(db, "productos")
-        productos.forEach(prod => {
-            addDoc(itemsCollection, prod)
-        })
-    }, [])
-    */
-
+    
     if (loading) {
         return (
             !nombreCategoria ? <Loading texto={"Cargando productos..."} /> : <Loading texto={`Cargando productos de la categría ${nombreCategoria}...`} />

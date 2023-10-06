@@ -13,8 +13,7 @@
 .prod:hover {
     border: 1px solid #a79393;
     border-radius: 10px;
-    background-color: rgb(131, 131, 147);
-
+    background-color: rgb(210, 210, 232);
 }
 
 .btn-eliminarItem {

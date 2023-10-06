@@ -53,3 +53,11 @@
     font-size: 25px;
     font-weight: bold;
 }
+
+#botonesDecision {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 20px;
+}

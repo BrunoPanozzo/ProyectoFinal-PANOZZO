@@ -1,11 +1,12 @@
 .titulo-importante {
+    padding: 20px;
     font-weight: bold;
     font-size: 45px;
     font-family: "Black Han Sans", sans-serif;
 }
 
 .cart-list {
-    background-color: #c0bebd;
+    background-color: #f1edeb;
     /* min-height: 70vh; */
     display: flex;
     flex-direction: column;
@@ -17,7 +18,8 @@
 }
 
 .cart-resumen-compra {
-    padding-bottom: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     font-size: 25px;
     font-weight: bold;
 }
