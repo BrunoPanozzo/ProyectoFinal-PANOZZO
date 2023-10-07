@@ -9,4 +9,4 @@ function Loading({ texto }) {
     );
 }
 
-export default Loading;
+export default Loading; 

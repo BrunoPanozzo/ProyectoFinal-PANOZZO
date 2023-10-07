@@ -1,12 +1,13 @@
+import { useState, useContext } from 'react'
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 import '../styles/itemDetail.css'
-import { useState, useContext } from 'react'
-import { CartContext } from "../context/CartContext";
 
 function ItemDetail({ producto }) {
 
     const { addItem } = useContext(CartContext)
+    
     const [stockDisponible, setStockDisponible] = useState(producto.stock)
     const [contador, setContador] = useState(0)
 

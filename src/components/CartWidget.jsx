@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { CartContext } from '../context/CartContext'
 import { Link } from "react-router-dom";
+import { CartContext } from '../context/CartContext'
 
 const CartWidget = () => {
 
@@ -8,23 +8,22 @@ const CartWidget = () => {
 
     const cantidadArticulosComprados = totalItems()
 
+    //cuando el CART está vacío
     if (cantidadArticulosComprados === 0)
         return (
             <>
             </>
         )
 
+    //cuando el CART contiene productos
     return (
         <div>
-            {/* <button type="button" className="btn btn-ligth position-relative" width="20" height="20"> */}
-                <Link to={"/cart"}>
-                    <img src={"../img/NavBar/carrito.png"} alt="Logo de carrito de compras" width="50" height="50" />
-                    <span id="cantidadProductos" className="position-absolute translate-middle badge rounded-pill bg-danger">{cantidadArticulosComprados}</span>
-                </Link>
-            {/* </button> */}
+            <Link to={"/cart"}>
+                <img src={"../img/NavBar/carrito.png"} alt="Logo carrito de compras" width="50" height="50" />
+                <span id="cantidadProductos" className="position-absolute translate-middle badge rounded-pill bg-danger">{cantidadArticulosComprados}</span>
+            </Link>
         </div>
     )
-
 }
 
 export default CartWidget

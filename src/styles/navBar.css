@@ -1,29 +1,29 @@
 .nav-encabezado {
-    min-height: 15vh;  
-    border-bottom: 10px solid #0b0606;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: baseline;
-    align-items: flex-start;
-    align-content: space-between;
-    padding-top: 25px;
-  }
-  
-  .active {
-    color: rgb(16, 16, 153) !important;
-    font-weight: bold;
-  }
-  
-  .enlace a {
-    text-decoration: none;
-    font-size: 20px;
-    margin: 15px;
-  }
-  
-  .enlace a:hover {
-    color: rgb(16, 16, 153);
-    background-color: transparent;
-    font-weight: bold;
-  }
+  min-height: 15vh;
+  border-bottom: 10px solid #0b0606;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  align-items: flex-start;
+  align-content: space-between;
+  padding-top: 25px;
+}
+
+.active {
+  color: rgb(16, 16, 153) !important;
+  font-weight: bold;
+}
+
+.enlace a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 15px;
+}
+
+.enlace a:hover {
+  color: rgb(16, 16, 153);
+  background-color: transparent;
+  font-weight: bold;
+}

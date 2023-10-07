@@ -1,9 +1,16 @@
+.titulo-importante {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Black Han Sans", sans-serif;
+}
+
 .formularioContacto {
     padding: 30px;
     margin-bottom: 45px;
-    border:rgb(53, 53, 218) solid 8px;
+    border: rgb(53, 53, 218) solid 8px;
     border-radius: 15px;
-    background-color:#f1edeb;
+    background-color: #f1edeb;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -51,6 +58,10 @@ input:valid {
     box-shadow: none;
 }
 
+.btn-ver-detalle:hover {
+    background-color: rgb(53, 53, 218);
+}
+
 #msjeOrdenConfirmada {
-padding-top: 100px;
+    padding-top: 100px;
 }

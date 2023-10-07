@@ -7,13 +7,12 @@
 
 .cart-list {
     background-color: #f1edeb;
-    /* min-height: 70vh; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    align-content:center;
+    align-content: center;
     padding: 10px;
 }
 

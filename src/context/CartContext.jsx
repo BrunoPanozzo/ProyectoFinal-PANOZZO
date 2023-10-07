@@ -7,7 +7,7 @@ export function CartProvider({ children }) {
     //defino mi carrito
     const [cart, setCart] = useState([])
 
-    //defino la funcion agregar una cierta "cantidad" de un "item" al carrito
+    //defino la funcion agregar una cierta "cantidad" de un producto al carrito
     const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
             //debo encontrar la entrada en el carrito y actualizar la cantidad
@@ -18,14 +18,13 @@ export function CartProvider({ children }) {
         else {
             //agrego la entrada al final del carrito
             setCart([...cart, {...item, quantity: quantity }])
-            //setCart(cartActual => [...cartActual, {...item, quantity}])
         }
     }
 
-    //defino la funcion borrar "item" del carrito
+    //defino la funcion borrar producto del carrito
     const removeItem = (itemId) => {
         const cartActualizado = cart.filter(elemento => elemento.id !== itemId)
-        setCart(cartActualizado) //setCart([...cartActualizado])
+        setCart(cartActualizado) 
     }
 
     //defino la funcion "vaciar" el carrito
@@ -33,7 +32,7 @@ export function CartProvider({ children }) {
         setCart([])
     }
 
-    //defino la funcion para saber si un "item" dado está incluído en el carrito
+    //defino la funcion para saber si un producto dado está incluído en el carrito
     const isInCart = (itemId) => {
         const itemExistente = cart.some((elemento) => elemento.id === itemId)
         return itemExistente

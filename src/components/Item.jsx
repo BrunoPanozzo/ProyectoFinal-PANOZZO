@@ -13,9 +13,7 @@ function Item({ producto }) {
                 </Link>
             </div>
             <p className="card-text item-precio">$ {producto.precio.toLocaleString()}</p>
-            <Link to={`/item/${producto.id}`} className="btn btn-secondary text-decoration text-center btn-ver-detalle">
-                Ver detalle
-            </Link>
+            <Link to={`/item/${producto.id}`} className="btn btn-secondary text-decoration text-center btn-ver-detalle">Ver detalle</Link>
         </div>
     );
 }

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
+import { Link } from "react-router-dom";
 import { CartContext } from '../context/CartContext'
 import CartItem from './CartItem'
 import '../styles/cart.css'
-import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -10,6 +10,7 @@ const Cart = () => {
 
     const cantidadArticulosComprados = totalItems()
 
+    //cuando el CART está vacío
     if (cantidadArticulosComprados === 0)
         return (
             <>
@@ -18,6 +19,7 @@ const Cart = () => {
             </>
         )
 
+    //cuando el CART contiene productos
     return (
         <div>
             <div className="row">
