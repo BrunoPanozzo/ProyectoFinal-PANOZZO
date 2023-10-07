@@ -4,7 +4,7 @@
     font-family: "Black Han Sans", sans-serif;
 }
 
-.item-list {
+.item-list { 
     background-color: #c0bebd;
     min-height: 70vh;
     display: flex;
