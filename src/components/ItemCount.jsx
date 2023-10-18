@@ -3,11 +3,11 @@ import '../styles/itemCount.css'
 
 const ItemCount = ({ stock, cantidadInicial, onAdd }) => {
 
-    const [stockDisponible, setStockDisponible] = useState(stock);
+    //const [stockDisponible, setStockDisponible] = useState(stock);
     const [contador, setContador] = useState(cantidadInicial);
 
     const incrementarCantidad = () => {
-        if (contador < stockDisponible)
+        if (contador < stock)
             setContador(contador + 1)
     }
 

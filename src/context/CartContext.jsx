@@ -38,6 +38,16 @@ export function CartProvider({ children }) {
         return itemExistente
     }
 
+    //defino la funcion para saber si un producto dado está incluído en el carrito, en caso afirmativo retorno el producto
+    const getItem = (itemId) => {
+        if (isInCart(itemId)) {
+            const posItemExistente = cart.findIndex((elemento) => elemento.id === itemId)
+            return cart[posItemExistente]
+        }
+        else
+            return null
+    }
+
     //defino la cantidad total de productos del carrito
     const totalItems = () => {
         return cart.reduce((acum, prod) => acum += prod.quantity, 0)
@@ -50,7 +60,7 @@ export function CartProvider({ children }) {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, totalItems, totalMonto }} >
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, getItem, totalItems, totalMonto }} >
             {children}
         </CartContext.Provider>
     );
